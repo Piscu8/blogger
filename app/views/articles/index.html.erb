@@ -3,11 +3,15 @@
 <ul id="articles">
   <% @articles.each do |article| %>
     <li>
-      <%= link_to article.title, article_path(article), 
-      class: 'article_title', id: "article_#{article.id}" %>
+      <% if logged_in? %>
+        <%= link_to article.title, article_path(article), 
+        class: 'article_title', id: "article_#{article.id}" %>
+      <% else %>
+        <%= article.title %>
+      <% end %>
     </li>
   <% end %>
 </ul>
 <p>
-  <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+  <%= link_to "Create a New Article", new_article_path, class: "new_article" if logged_in? %>
 </p>

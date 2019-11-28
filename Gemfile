@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Require paperclip Gem
 gem "paperclip"
+
+# Require Sorcery for authetication
+gem "sorcery"
